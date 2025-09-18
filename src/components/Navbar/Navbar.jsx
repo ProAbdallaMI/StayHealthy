@@ -1,3 +1,7 @@
+import { Link } from "react-router-dom";
+import "./Navbar.css";
+import logo from "./StayHealthy.png"; // Import the logo image
+
 const Navbar = () => {
 	// Define the handleClick function to toggle the navigation menu
 
@@ -17,50 +21,59 @@ const Navbar = () => {
 		<>
 			<nav>
 				{/* <!-- Navigation logo section --> */}
-				<div class="nav__logo">
+				<div className="nav__logo">
 					{/* <!-- Link to the home page --> */}
-					<a
-						href="/"
-						style="text-decoration: none; display:flex; margin-left: 20px;"
+					<Link
+						to="/"
+						style={{
+							textDecoration: "none",
+							display: "flex",
+							marginLeft: "20px",
+						}}
 					>
 						StayHealthy
 						{/* <!-- Insert an SVG icon of a doctor with a stethoscope --> */}
 						<img
-							src="../StayHealthy.png"
+							src={logo}
 							alt="main icon"
-							style="width: 40px; height: 40px; margin-bottom: 8px; margin-left: 5px;"
+							style={{
+								width: "40px",
+								height: "40px",
+								marginBottom: "8px",
+								marginLeft: "5px",
+							}}
 						/>
-					</a>
+					</Link>
 					{/* <!-- A span element for styling purposes --> */}
 					<span></span>
 				</div>
 				{/* <!-- Navigation icon section with an onClick event listener --> */}
-				<div class="nav__icon" onClick={handleClick}>
+				<div className="nav__icon" onClick={handleClick}>
 					{/* <!-- Font Awesome icon for bars (hamburger menu) --> */}
-					<i class="fa fa-times fa fa-bars"></i>
+					<i className="fa fa-times fa fa-bars"></i>
 				</div>
 
-				{/* <!-- Unordered list for navigation links with 'active' class --> */}
-				<ul class="nav__links active">
+				{/* <!-- Unordered list for navigation links with 'active' className --> */}
+				<ul className="nav__links active">
 					{/* <!-- List item for the 'Home' link --> */}
-					<li class="link">
-						<a href="../Landing_Page/LandingPage.html">Home</a>
+					<li className="link">
+						<Link to="/">Home</Link>
 					</li>
 					{/* <!-- List item for the 'Appointments' link --> */}
-					<li class="link">
-						<a href="#">Appointments</a>
+					<li className="link">
+						<Link to="#">Appointments</Link>
 					</li>
 					{/* <!-- List item for the 'Sign Up' link with a button --> */}
-					<li class="link">
-						<a href="../Sign_Up//Sign_Up.html">
-							<button class="btn1">Sign Up</button>
-						</a>
+					<li className="link">
+						<Link to="/signup">
+							<button className="btn1">Sign Up</button>
+						</Link>
 					</li>
 					{/* <!-- List item for the 'Login' link with a button --> */}
-					<li class="link">
-						<a href="../Login/Login.html">
-							<button class="btn1">Login</button>
-						</a>
+					<li className="link">
+						<Link to="/login">
+							<button className="btn1">Login</button>
+						</Link>
 					</li>
 				</ul>
 			</nav>

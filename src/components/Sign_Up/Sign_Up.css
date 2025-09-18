@@ -19,8 +19,9 @@
 /* Styles for the grid layout of the signup form */
 .signup-grid {
     display: grid; /* Use grid layout for the element */
-    grid-template-columns: 0.1fr 1.5fr 8fr; /* Define columns with fractional widths */
+    grid-template-columns: 1fr 1fr 1fr; /* Define columns with fractional widths */
     grid-gap: 10px; /* Set the gap between grid items */
+    width: 100%;
 }
 
 /* Styles for the main signup text */
