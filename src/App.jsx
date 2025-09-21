@@ -7,6 +7,7 @@ import SignUp from './components/Sign_Up/SignUp'
 import InstantConsultation from './components/InstantConsultationBooking/InstantConsultation'
 import Notification from './components/Notification/Notification'
 import ReviewForm from './components/ReviewForm/ReviewForm'
+import ProfileForm from './components/ProfileCard/ProfileForm'
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/notification" element={<Notification />} />
           <Route path="/review" element={<ReviewForm />} />
+          <Route path="/profile" element={<ProfileForm />} />
         </Routes>
         <Notification />
       </BrowserRouter>

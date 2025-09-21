@@ -2,9 +2,11 @@ import { Link } from "react-router-dom";
 import "./Navbar.css";
 import logo from "./StayHealthy.png"; // Import the logo image
 import { useState } from "react";
+import ProfileCard from "../ProfileCard/ProfileCard";
 
 const Navbar = () => {
-	const loggedIn = false;
+	const [profile, setProfile] = useState(false);
+	const loggedIn = true;
 
 	// Define the handleClick function to toggle the navigation menu
 
@@ -69,9 +71,10 @@ const Navbar = () => {
 					{/* <!-- List item for the 'Sign Up' link with a button --> */}
 					{loggedIn ? (
 						<>
-							<li className="link">
+							<li className="link" onClick={() => setProfile(!profile)}>
 								<Link to="#">Welcome, ABDALLA</Link>
 							</li>
+							{profile && ( <ProfileCard /> )}
 							<li className="link">
 								<Link to="/signup">
 									<button className="btn1">Logout</button>
