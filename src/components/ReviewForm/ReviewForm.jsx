@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./ReviewForm.css";
-import Review from "./Review";
+import Review from "./Form";
 
 const ReviewForm = () => {
 	const [showForm, setShowForm] = useState(false);
@@ -22,9 +22,9 @@ const ReviewForm = () => {
 						<td>Dr. Smith</td>
 						<td>Cardiology</td>
 						<td>
-							<button onClick={() => setShowForm(true)}>Provide feedback</button>
+							<button style={{ backgroundColor: "gray"}} onClick={() => setShowForm(true)}>Provide feedback</button>
 						</td>
-						<td>No review given</td>
+						<td>reviewed</td>
 					</tr>
 					<tr>
 						<td>2</td>

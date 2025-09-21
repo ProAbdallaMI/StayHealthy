@@ -1,5 +1,7 @@
 // Following code has been commented with appropriate comments for your reference.
 import React, { useState } from 'react';
+import { CiStar } from "react-icons/ci";
+import { FaStar } from 'react-icons/fa';
 
 // Function component for giving reviews
 function GiveReviews() {
@@ -42,7 +44,7 @@ function GiveReviews() {
   };
 
   return (
-    <div>
+    <div style={{ position: 'absolute', width: "40%", top: 0, marginLeft: "30%", backgroundColor: "lightgrey", padding: "20px", borderRadius: "10px", height: "100vh" }}>
       <h2>Form with Message</h2>
       {!showForm ? (
         // Display button to open the form
@@ -60,6 +62,11 @@ function GiveReviews() {
           <div>
             <label htmlFor="review">Review:</label>
             <textarea id="review" name="review" value={formData.review} onChange={handleChange} />
+          </div>
+          <div>
+            {/* rating as starts from 1 to 5 */}
+            <label htmlFor="rating">Rating:</label>
+            <FaStar style={{color: "gold"}} /><FaStar style={{color: "gold"}} /><FaStar style={{color: "gold"}} /><FaStar style={{color: "gold"}} /><CiStar />
           </div>
           {/* Submit button for form submission */}
           <button type="submit">Submit</button>
