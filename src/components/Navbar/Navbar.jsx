@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import logo from "./StayHealthy.png"; // Import the logo image
+import { useState } from "react";
 
 const Navbar = () => {
+	const loggedIn = false;
+
 	// Define the handleClick function to toggle the navigation menu
 
 	const handleClick = () => {
@@ -61,20 +64,35 @@ const Navbar = () => {
 					</li>
 					{/* <!-- List item for the 'Appointments' link --> */}
 					<li className="link">
-						<Link to="#">Appointments</Link>
+						<Link to="/instant-consultation">Appointments</Link>
 					</li>
 					{/* <!-- List item for the 'Sign Up' link with a button --> */}
-					<li className="link">
-						<Link to="/signup">
-							<button className="btn1">Sign Up</button>
-						</Link>
-					</li>
-					{/* <!-- List item for the 'Login' link with a button --> */}
-					<li className="link">
-						<Link to="/login">
-							<button className="btn1">Login</button>
-						</Link>
-					</li>
+					{loggedIn ? (
+						<>
+							<li className="link">
+								<Link to="#">Welcome, ABDALLA</Link>
+							</li>
+							<li className="link">
+								<Link to="/signup">
+									<button className="btn1">Logout</button>
+								</Link>
+							</li>
+						</>
+					) : (
+						<>
+							<li className="link">
+								<Link to="/signup">
+									<button className="btn1">Sign Up</button>
+								</Link>
+							</li>
+							{/* <!-- List item for the 'Login' link with a button --> */}
+							<li className="link">
+								<Link to="/login">
+									<button className="btn1">Login</button>
+								</Link>
+							</li>
+						</>
+					)}{" "}
 				</ul>
 			</nav>
 		</>

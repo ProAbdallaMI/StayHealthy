@@ -4,6 +4,7 @@ import Navbar from './components/Navbar/Navbar'
 import LandingPage from './components/Landing_Page/LandingPage'
 import Login from './components/Login/Login'
 import SignUp from './components/Sign_Up/SignUp'
+import InstantConsultation from './components/InstantConsultationBooking/InstantConsultation'
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<LandingPage />} />
+          <Route path="/instant-consultation" element={<InstantConsultation />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
         </Routes>
