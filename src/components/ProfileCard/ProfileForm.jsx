@@ -3,11 +3,12 @@
 import React, { useEffect, useState } from "react";
 import { API_URL } from "../../config";
 import { useNavigate } from "react-router-dom";
+import "./ProfileForm.css";
 
 // Define a Function component called ProfileForm
 const ProfileForm = () => {
   // Set up state variables using the useState hook
-  const [userDetails, setUserDetails] = useState({});
+  const [userDetails, setUserDetails] = useState({name: "mohamed", email: "abdalla@gmail.com", phone: "0123456789"});
   const [updatedDetails, setUpdatedDetails] = useState({});
   const [editMode, setEditMode] = useState(false);
   
@@ -126,6 +127,24 @@ const ProfileForm = () => {
             />
           </label>
           {/* Create similar logic for displaying and editing name and phone from userDetails */}
+          <label>
+            Name
+            <input
+              type="text"
+              name="name"
+              value={userDetails.name}
+              onChange={handleInputChange}
+            />
+          </label>
+          <label>
+            Phone
+            <input
+              type="text"
+              name="phone"
+              value={userDetails.phone}
+              onChange={handleInputChange}
+            />
+          </label>
           <button type="submit">Save</button>
         </form>
       ) : (
