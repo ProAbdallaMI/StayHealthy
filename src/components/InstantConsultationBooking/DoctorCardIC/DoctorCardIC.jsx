@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 import './DoctorCardIC.css';
@@ -6,13 +6,13 @@ import AppointmentFormIC from '../AppointmentFormIC/AppointmentFormIC'
 import { v4 as uuidv4 } from 'uuid';
 
 
-const DoctorCardIC = ({ name, speciality, experience, ratings, profilePic }) => {
+const DoctorCardIC = ({ name, speciality, experience, ratings/*, profilePic*/ }) => {
   const [showModal, setShowModal] = useState(false);
   const [appointments, setAppointments] = useState([]);
 
-  const handleBooking = () => {
-    setShowModal(true);
-  };
+  // const handleBooking = () => {
+  //   setShowModal(true);
+  // };
 
   const handleCancel = (appointmentId) => {
     const updatedAppointments = appointments.filter((appointment) => appointment.id !== appointmentId);
@@ -68,7 +68,7 @@ const DoctorCardIC = ({ name, speciality, experience, ratings, profilePic }) => 
           open={showModal}
           onClose={() => setShowModal(false)}
         >
-          {(close) => (
+          {() => (
             <div className="doctorbg" style={{ height: '100vh', overflow: 'scroll' }}>
               <div>
                 <div className="doctor-card-profile-image-container">
