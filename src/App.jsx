@@ -12,9 +12,11 @@ import ReportsLayouts from './components/ReportsLayout/ReportsLayout'
 
 function App() {
 
+  const base = location.hostname.includes('github.io') ? '/StayHealthy' : '';
+
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter basename={base}>
         <Navbar />
         <Routes>
           <Route path="/" element={<LandingPage />} />
