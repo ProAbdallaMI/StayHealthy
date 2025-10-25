@@ -35,7 +35,7 @@ jobs:
 
       - name: Build (Vite)
         if: github.ref == 'refs/heads/develop'
-        run: npm run build -- --base=/portfolio/
+        run: npm run build -- --base=/StayHealthy/
 
       - name: Upload dist artifact
         uses: actions/upload-artifact@v4
